@@ -61,7 +61,6 @@ argocd account update-password
 ```
 
 You can now login to the ArgoCD UI with the new admin password.
-Result: 
 
 ![GitHub](extra/argocdlogin1.png)
 
