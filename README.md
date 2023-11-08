@@ -31,7 +31,7 @@ kubectl apply -f install.yaml -n demo1
 # Expose the argocd-server service as type LoadBalancer and get the IP address of the UI service. 
 # This can be later modified to expose the service as type Ingress or HttpProxy
 kubectl patch svc argocd-server -n demo1 -p '{"spec": {"type": "LoadBalancer"}}'
-kubectl get svc argocd-server -n demo1 -o json|jq -r '.status.loadBalancer.ingress[0].ip'
+kubectl get svc argocd-server -n demo1 -o json|jq -r '.status.loadBalancer.ingress[0].ip'  # This is the IP of the ArgoCD GUI 
 
 # We need to modify the RBAC on the ARGOCD NS to add new clusters and applications dynamically. 
 wget https://raw.githubusercontent.com/ogelbric/argocd/main/Dockerfile-synchook/rbac.yaml
