@@ -68,9 +68,13 @@ You can now login to the ArgoCD UI with the new admin password.
 
 Using the UI or the CLI create the initial cluster creation jon. The `tkgs-cluster-class-noaz.yaml` is the sample file. You can close this repo, modify the yamls and execute setup as per your requirements. 
 ```
-argocd app create tkc-deploy --repo https://github.com/papivot/argocd-gitops-tanzu.git --path tkc --dest-server https://kubernetes.default.svc --dest-namespace demo1 --auto-prune --sync-policy auto
+argocd app create tkc-deploy --repo https://github.com/ogelbric/argocd.git --path tkc --dest-server https://kubernetes.default.svc --dest-namespace demo1 --auto-prune --sync-policy auto
 # for e.g.
 # argocd app create {{NAME OF JOB}} --repo {{PATH OF GIT REPO}} --path {{DIRECTORY OF THE CLUSTER YAML}} --dest-server https://kubernetes.default.svc --dest-namespace {{SUP NAMESPACE WHERE CLUSTER IS TO BE DEPLOYED}} --auto-prune --sync-policy auto
+
+And to address potentual docker rate limits:
+kubectl patch serviceaccount argocd-hook -p '{"imagePullSecrets": [{"name": "regcred"}]}' -n demo1
+
 ```
 
 This single command should do the magic !!!
