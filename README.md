@@ -1,4 +1,5 @@
-# GitOps on vSphere with Tanzu leveraging ArgoCD (Native PODs on SuperVisor Cluster
+# GitOps on vSphere with Tanzu leveraging ArgoCD 
+# (Native PODs on SuperVisor Cluster
 
 *NOTE* - This has been tested on vCenter 8.0u2. Supervisor version 1.26 (TKGs).
 *NOTE* - Inspiration came from (https://github.com/papivot)
