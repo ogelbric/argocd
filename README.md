@@ -11,12 +11,13 @@
 * The job will then install `cert-manager` and `contour` K8s addons to the workload cluster deployed in the previous step. 
 
 ## ArgoCD installation (to be executed on the Supervisor Control Plane VM)
-(https://github.com/ogelbric/argocd/blob/main/extra/info.md)
+(Connect to Supervisor VM: https://github.com/ogelbric/argocd/blob/main/extra/info.md)
 ```
 bash
+# Install wget
 tdnf install wget
 wget https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-vi install.yaml # There are two ClusterRoleBindings with reference to "namespace: argocd". Change them to "namespace: demo1" and save the file. 
+vi install.yaml # There are two ClusterRoleBindings with reference to "namespace: argocd". Change them to "namespace: demo1" and save the file. File is very big search for exact string! 
 kubectl apply -f install.yaml -n demo1
 # The above command may not work as its pulling image from dockerhub and end up with rate limiting issues. If so perform the next two commands - 
 # kubectl create secret docker-registry regcred  --docker-username="{{DOCKERHUB USERNAME}}" --docker-password='{{DOCKERHUB PASSWORD}}' --docker-email={{DOCKERHUB EMAIL}} -n demo1
