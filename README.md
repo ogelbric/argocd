@@ -34,7 +34,7 @@ kubectl patch svc argocd-server -n demo1 -p '{"spec": {"type": "LoadBalancer"}}'
 kubectl get svc argocd-server -n demo1 -o json|jq -r '.status.loadBalancer.ingress[0].ip'
 
 # We need to modify the RBAC on the ARGOCD NS to add new clusters and applications dynamically. 
-wget https://raw.githubusercontent.com/ogelbric/argocd-gitops-tanzu/main/Dockerfile-synchook/rbac.yaml
+wget https://raw.githubusercontent.com/ogelbric/argocd/main/Dockerfile-synchook/rbac.yaml
 kubectl apply -f rbac.yaml -n demo1
 ```
 Result in vCenter (Native PODs): 
