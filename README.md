@@ -37,6 +37,7 @@ wget https://raw.githubusercontent.com/ogelbric/argocd/main/Dockerfile-synchook/
 kubectl apply -f rbac.yaml -n demo1
 ```
 Result in vCenter (Native PODs): 
+
 ![GitHub](extra/nativepods.png)
 
 
@@ -60,6 +61,9 @@ argocd account update-password
 ```
 
 You can now login to the ArgoCD UI with the new admin password.
+Result: 
+
+![GitHub](extra/argocdlogin1.png)
 
 ## Deploy a classy cluster using the sample manifest provided in the tkc folder in this repo
 
