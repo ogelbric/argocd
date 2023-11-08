@@ -77,4 +77,11 @@ kubectl patch serviceaccount argocd-hook -p '{"imagePullSecrets": [{"name": "reg
 
 ```
 
-This single command should do the magic !!!
+This single command should do install the gest cluster and install the applications !!!
+
+# Result:
+
+![GitHub](extra/phase1.png)
+
+![GitHub](extra/phase11.png)
+
