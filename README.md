@@ -13,7 +13,6 @@
 ## ArgoCD installation (to be executed on the Supervisor Control Plane VM)
 (Connect to Supervisor VM: https://github.com/ogelbric/argocd/blob/main/extra/info.md)
 ```
-bash
 # Install wget
 tdnf install wget
 wget https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
