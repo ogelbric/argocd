@@ -22,6 +22,8 @@ kubectl apply -f install.yaml -n demo1
 # The above command may not work as its pulling image from dockerhub and end up with rate limiting issues. If so perform the next two commands - 
 # kubectl create secret docker-registry regcred  --docker-username="{{DOCKERHUB USERNAME}}" --docker-password='{{DOCKERHUB PASSWORD}}' --docker-email={{DOCKERHUB EMAIL}} -n demo1
 # kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "regcred"}]}'
+# kubectl patch deployment argocd-redis -n demo1 -p '{"spec": {"template": {"spec": {"imagePullSecrets": [{"name": "regcred"}]}}}}'
+
 
 # Expose the argocd-server service as type LoadBalancer and get the IP address of the UI service. 
 # This can be later modified to expose the service as type Ingress or HttpProxy
