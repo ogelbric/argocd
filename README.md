@@ -4,7 +4,8 @@
 
 
 * In this example, we will be using the vSphere Namespace (pre-created from vCenter) called `demo1`. Users can change the reference as needed. 
-* We will be deploying ArgoCD in the `demo` vSphere Namespace. 
+* We will be deploying ArgoCD in the `demo1` vSphere Namespace.
+* A tagged datastore called `tanzu` is needed
 * Using ArgoCD, we will deploy a Classy Cluster `workload-vsphere-tkg1`.
 * Once the cluster deployment complete, the `PostSync` job hook within ArgoCD will add the new cluster to ArgoCD.
 * The job will then install `cert-manager` and `contour` K8s addons to the workload cluster deployed in the previous step. 
