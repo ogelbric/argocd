@@ -1,7 +1,7 @@
-# GitOps on vSphere with Tanzu leveraging ArgoCD
+# GitOps on vSphere with Tanzu leveraging ArgoCD (Native PODs on SuperVisor Cluster
 
-*NOTE* - This has been tested on vCenter 8.0u2. Supervisor version 1.26.
-
+*NOTE* - This has been tested on vCenter 8.0u2. Supervisor version 1.26 (TKGs).
+*NOTE* - Inspiration came from (https://github.com/papivot)
 
 * In this example, we will be using the vSphere Namespace (pre-created from vCenter) called `demo1`. Users can change the reference as needed. 
 * We will be deploying ArgoCD in the `demo1` vSphere Namespace.
@@ -42,7 +42,7 @@ Result in vCenter (Native PODs):
 
 
 
-## Login to ArgoCD for the first time
+## Login to ArgoCD for the first time (CLI)
 ```
 # Download the relevent ArgoCD CLI (On jump box (my case linux))
 mkdir argocd
@@ -86,4 +86,7 @@ This single command should do install the gest cluster and install the applicati
 ![GitHub](extra/phase11.png)
 
 ![GitHub](extra/phase111.png)
+
+![GitHub](extra/phase1111.png)
+
 
