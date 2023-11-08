@@ -24,6 +24,9 @@ kubectl apply -f install.yaml -n demo1
 # kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "regcred"}]}'
 # kubectl patch deployment argocd-redis -n demo1 -p '{"spec": {"template": {"spec": {"imagePullSecrets": [{"name": "regcred"}]}}}}'
 
+# Monitor deployment
+# k get pods -n demo1
+# k get events -n demo1
 
 # Expose the argocd-server service as type LoadBalancer and get the IP address of the UI service. 
 # This can be later modified to expose the service as type Ingress or HttpProxy
