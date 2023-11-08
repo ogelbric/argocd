@@ -53,7 +53,7 @@ argocd version
 
 # Login to the Supervisor API
 kubectl vsphere login --insecure-skip-tls-verify --server {{SUPERVISOR IPADDRESS}} -u administrator@vsphere.local
-# Update the kubeconfig context to the {{SUPERVISOR IPADDRESS}}
+# Update the kubeconfig context to the {{SUPERVISOR IPADDRESS}} (kubectl config use-context {{SUPERVISOR IPADDRESS}})
 argocd admin initial-password -n demo1
 argocd login {{IPADDRESS OF ARGOCD SERVER}}
 argocd account update-password
@@ -64,7 +64,7 @@ You can now login to the ArgoCD UI with the new admin password.
 ## Deploy a classy cluster using the sample manifest provided in the tkc folder in this repo
 
 Using the UI or the CLI create the initial cluster creation jon. The `tkgs-cluster-class-noaz.yaml` is the sample file. You can close this repo, modify the yamls and execute setup as per your requirements. 
-```bash
+```
 argocd app create tkc-deploy --repo https://github.com/papivot/argocd-gitops-tanzu.git --path tkc --dest-server https://kubernetes.default.svc --dest-namespace demo1 --auto-prune --sync-policy auto
 # for e.g.
 # argocd app create {{NAME OF JOB}} --repo {{PATH OF GIT REPO}} --path {{DIRECTORY OF THE CLUSTER YAML}} --dest-server https://kubernetes.default.svc --dest-namespace {{SUP NAMESPACE WHERE CLUSTER IS TO BE DEPLOYED}} --auto-prune --sync-policy auto
