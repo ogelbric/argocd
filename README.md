@@ -43,8 +43,14 @@ Result in vCenter (Native PODs):
 
 
 ## Login to ArgoCD for the first time
-```bash
-# Download the relevent ArgoCD CLI
+```
+# Download the relevent ArgoCD CLI (On jump box (my case linux))
+mkdir argocd
+cd argocd
+wget https://github.com/argoproj/argo-cd/releases/download/v2.9.0/argocd-linux-amd64
+chmod +x argocd-linux-amd64
+cp argocd-linux-amd64 /usr/local/bin/argocd
+argocd version
 
 # Login to the Supervisor API
 kubectl vsphere login --insecure-skip-tls-verify --server {{SUPERVISOR IPADDRESS}} -u administrator@vsphere.local
