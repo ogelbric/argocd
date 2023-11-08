@@ -55,7 +55,7 @@ argocd version
 kubectl vsphere login --insecure-skip-tls-verify --server {{SUPERVISOR IPADDRESS}} -u administrator@vsphere.local
 # Update the kubeconfig context to the {{SUPERVISOR IPADDRESS}} (kubectl config use-context {{SUPERVISOR IPADDRESS}})
 argocd admin initial-password -n demo1
-argocd login {{IPADDRESS OF ARGOCD SERVER}}
+argocd login {{IPADDRESS OF ARGOCD SERVER}}  #use admin as ID and password from above 
 argocd account update-password
 ```
 
