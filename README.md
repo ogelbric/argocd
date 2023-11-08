@@ -37,7 +37,7 @@ kubectl get svc argocd-server -n demo1 -o json|jq -r '.status.loadBalancer.ingre
 wget https://raw.githubusercontent.com/papivot/argocd-gitops-tanzu/main/Dockerfile-synchook/rbac.yaml
 kubectl apply -f rbac.yaml -n demo1
 ```
-Result in vCenter (Native PODS): 
+Result in vCenter (Native PODs): 
 ![GitHub](extra/nativepods.png)
 
 
