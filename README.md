@@ -38,7 +38,7 @@ wget https://raw.githubusercontent.com/papivot/argocd-gitops-tanzu/main/Dockerfi
 kubectl apply -f rbac.yaml -n demo1
 ```
 Result in vCenter (Native PODS): 
-![GitHub](extra/nativepod.png)
+![GitHub](extra/nativepods.png)
 
 
 
